@@ -18,6 +18,8 @@ public class BeanLifeCycleTest {
 
     @Configuration
     static class LifeCycleConfig{
+        //@Bean(initMethod = "init", destroyMethod = "close")
+        //destroyMethod는 close, shotdown 메소드를 자동으로 추론하여 호출한다(기본값이 (inferred)로 되어있어서 가능하다)
         @Bean
         public NetworkClient networkClient(){
             NetworkClient networkClient = new NetworkClient();
